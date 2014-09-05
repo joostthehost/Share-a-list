@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/lightest_grey" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/grocery_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Add" />
+
+        <AutoCompleteTextView
+            android:id="@+id/grocery_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/grocery_add"
+            android:layout_toLeftOf="@id/grocery_add"
+            android:ems="10"
+            android:inputType="text"
+            android:completionThreshold="1" >
+
+            <requestFocus />
+
+        </AutoCompleteTextView>
+
+        <ListView
+            android:id="@+id/groceryListDetailedView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/grocery_edittext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" >
+        </ListView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
