@@ -4,12 +4,30 @@
     android:layout_height="wrap_content"
     android:background="@color/lightest_grey" >
 
+
+
     <ListView
         android:id="@+id/groceryListsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp" >
+        android:layout_margin="@dimen/global_margin"
+        android:layout_below="@+id/title">
     </ListView>
+
+    <TextView
+        android:id="@+id/title"
+        android:background="white"
+        android:textColor="black"
+        android:text="Grocery Lists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        >
+
+    </TextView>
 
 </RelativeLayout>
