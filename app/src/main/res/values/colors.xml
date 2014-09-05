@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="dark_grey">#333333</color>
+    <color name="grey">#666666</color>
+    <color name="light_grey">#e9e9e9</color>	<!-- horizontal bar below recipe header image -->
+    <color name="lightest_grey">#f4f4f4</color>	<!-- background color in views -->
+    <color name="white">#ffffff</color>			<!-- background color in views (content) -->
+
+    <!-- button colors -->
+    <color name="dark_blue">#34495e</color>
+    <color name="light_blue">#3498db</color>
+    <color name="blue">#2980b9</color>
+    <color name="green">#27ae60</color>
+
+    <!-- actionbar -->
+    <color name="pomegranate">#c0392b</color>
+    <color name="pomegranate_bright">#da2227</color>
+    <color name="pomegranate_bright2">#d51218</color>
+
+
+</resources>
