@@ -5,6 +5,16 @@
     android:background="@color/lightest_grey" >
 
 
+    <TextView
+        android:id="@+id/title"
+        android:text="Grocery Lists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/white" />
 
     <ListView
         android:id="@+id/groceryListsView"
@@ -12,20 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/global_margin"
-        android:layout_below="@+id/title">
+        android:layout_below="@+id/title"
+        android:background="@color/white" >
     </ListView>
-
-    <TextView
-        android:id="@+id/title"
-        android:text="Grocery Lists"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/global_margin"
-        android:textSize="20dp"
-        android:textStyle="bold"
-
-        >
-
-    </TextView>
 
 </RelativeLayout>
