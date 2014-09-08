@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent"
+    android:background="@color/app_white" >
 
-     <ListView
+    <TextView
+        android:id="@+id/listTitle"
+        android:text="Shared lists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="75dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="30dp"
+        android:gravity="right"
+        android:textSize="24dp"
+        android:textColor="@color/app_white"
+        android:background="@color/app_pink" />
+
+    <ListView
         android:id="@+id/groceryListsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/global_margin"
-        android:layout_below="@+id/title">
+        android:layout_below="@id/listTitle" >
     </ListView>
 
-    <TextView
-        android:id="@+id/title"
-        android:text="Grocery Lists"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/global_margin"
-        android:textSize="20dp"
-        android:textStyle="bold">
-
-    </TextView>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:background="@drawable/circular_button_blue"
+        android:src="@drawable/ic_action_add_list"
+        android:scaleType="fitXY" />
 
 </RelativeLayout>

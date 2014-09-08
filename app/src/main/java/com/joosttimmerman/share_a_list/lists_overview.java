@@ -5,19 +5,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.app.ListActivity;
-import android.os.Bundle;
-public class lists_overview extends ListActivity {
+
+public class lists_overview extends ActionBarActivity {
 
     //iets toevoeg
 
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2" };
-        list_view_adapter adapter = new list_view_adapter(this, values);
-        setListAdapter(adapter);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lists_overview);
     }
 
 

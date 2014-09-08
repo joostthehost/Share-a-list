@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#000000</color>
-    <color name="dark_grey">#333333</color>
-    <color name="grey">#666666</color>
-    <color name="light_grey">#e9e9e9</color>	<!-- horizontal bar below recipe header image -->
-    <color name="lightest_grey">#f4f4f4</color>	<!-- background color in views -->
-    <color name="white">#ffffff</color>			<!-- background color in views (content) -->
+    <color name="app_black">#000000</color>
+    <color name="app_dark_grey">#333333</color>
+    <color name="app_grey">#999999</color>
+    <color name="app_grey_light">#f4f4f4</color>	<!-- background color in views -->
+    <color name="app_white">#ffffff</color>			<!-- background color in views (content) -->
 
     <!-- button colors -->
-    <color name="dark_blue">#34495e</color>
-    <color name="light_blue">#3498db</color>
-    <color name="blue">#2980b9</color>
-    <color name="green">#27ae60</color>
+    <color name="app_pink">#D2315D</color>
+    <color name="app_yellow">#F7C808</color>
+    <color name="app_orange">#E98813</color>
+    <color name="app_blue">#22B5BF</color>
+    <color name="app_blue_dark">#366CD4</color>
+    <color name="app_purple">#8767A6</color>
+    <color name="app_green">#88C134</color>
 
-    <!-- actionbar -->
-    <color name="pomegranate">#c0392b</color>
-    <color name="pomegranate_bright">#da2227</color>
-    <color name="pomegranate_bright2">#d51218</color>
 
 
 </resources>
