@@ -1,19 +1,19 @@
 package com.joosttimmerman.share_a_list;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
-public class lists_overview extends ActionBarActivity {
-
-    //iets toevoeg
+/**
+ * Created by Joost on 5-9-2014.
+ */
+public class ListDetails extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lists_overview);
+        setContentView(R.layout.activity_list_details);
     }
 
 

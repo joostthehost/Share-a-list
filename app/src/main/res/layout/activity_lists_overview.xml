@@ -19,7 +19,7 @@
         android:background="@color/app_pink" />
 
     <ListView
-        android:id="@+id/groceryListsView"
+        android:id="@+id/ListsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
