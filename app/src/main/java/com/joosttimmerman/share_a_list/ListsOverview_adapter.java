@@ -1,38 +1,65 @@
 package com.joosttimmerman.share_a_list;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.List;
+
+import database.ListName;
+
 /**
- * Created by Joost on 10-9-2014.
+ * Created by Joost on 12-9-2014.
  */
-public class ListsOverview_adapter extends ArrayAdapter<String>{
-    private final Activity context;
-    private final String[] web;
-    private final Integer[] imageId;
+public class ListsOverview_adapter extends ArrayAdapter<ListName> {
 
-    public ListsOverview_adapter(Activity context,String[] web, Integer[] imageId) {
-        super(context, R.layout.rowlayout_lists_overview, web);
+    Context context;
+    List<ListName> listnames;
+
+    public ListsOverview_adapter(Context context, int resourceId, List<ListName> listnames) {
+        super(context, resourceId, listnames);
+
+        this.listnames = listnames;
         this.context = context;
-        this.web = web;
-        this.imageId = imageId;
     }
-    @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView= inflater.inflate(R.layout.rowlayout_lists_overview, null, true);
 
-        TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-
-        txtTitle.setText(web[position]);
-        imageView.setImageResource(imageId[position]);
-
-        return rowView;
+    // private view holder class for performance
+    private class ViewHolder {
+        CheckBox checked;
+        TextView item_name;
+        int pos;
     }
+
+    // get the view and set item details
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        ViewHolder holder = null;
+        ListName item = getItem(position);
+
+        LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        if (convertView == null) {
+            convertView = mInflater.inflate(R.layout.listitem_lists_overview, null);
+            holder = new ViewHolder();
+
+            holder.checked = (CheckBox) convertView.findViewById(R.id.grocery_checkbox);
+            holder.item_name = (TextView) convertView.findViewById(R.id.item_name);
+
+            convertView.setTag(holder);
+
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        // set the actual info
+        holder.pos = position;
+        holder.checked.setChecked(false);
+        holder.item_name.setText(item.getListName());
+
+        return convertView;
+    }
+
 }

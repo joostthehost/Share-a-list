@@ -3,9 +3,6 @@ package database;
 /**
  * Created by Joost on 5-9-2014.
  */
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,15 +13,18 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     // name of the database file for your application -- change to something appropriate for your app
-    private static final String DATABASE_NAME = "GrocerylistsDB.sqlite";
+    private static final String DATABASE_NAME = "ListNamesDB.sqlite";
 
     // any time you make changes to your database objects, you may have to increase the database version
     private static final int DATABASE_VERSION = 1;
 
     // the DAO object we use to access the SimpleData table
-    private Dao<Grocery, Integer> groceryDao = null;
+    private Dao<ListName, Integer> listNameDao = null;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,7 +33,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database,ConnectionSource connectionSource) {
         try {
-            TableUtils.createTable(connectionSource, Grocery.class);
+            TableUtils.createTable(connectionSource, ListName.class);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Can't create database", e);
             throw new RuntimeException(e);
@@ -63,15 +63,15 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     }
 
-    public Dao<Grocery, Integer> getGroceryDao() {
-        if (null == groceryDao) {
+    public Dao<ListName, Integer> getListNameDao() {
+        if (null == listNameDao) {
             try {
-                groceryDao = getDao(Grocery.class);
+                listNameDao = getDao(ListName.class);
             }catch (java.sql.SQLException e) {
                 e.printStackTrace();
             }
         }
-        return groceryDao;
+        return listNameDao;
     }
 
 }

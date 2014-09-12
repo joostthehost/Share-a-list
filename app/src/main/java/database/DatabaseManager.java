@@ -3,10 +3,10 @@ package database;
 /**
  * Created by Joost on 5-9-2014.
  */
+import android.content.Context;
+
 import java.sql.SQLException;
 import java.util.List;
-
-import android.content.Context;
 
 public class DatabaseManager {
 
@@ -35,73 +35,73 @@ public class DatabaseManager {
     //first methods implemented below
     //extend this class with other methods when needed
 
-    //returns all groceries in the DB
-    public List<Grocery> getAllGroceries() {
-        List<Grocery> groceries = null;
+    //returns all listnames in the DB
+    public List<ListName> getAllListNames() {
+        List<ListName> listnames = null;
         try {
-            groceries = getHelper().getGroceryDao().queryForAll();
+            listnames = getHelper().getListNameDao().queryForAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return groceries;
+        return listnames;
     }
 
-    //returns a grocery (by presenting the ID)
-    public Grocery getGroceryWithId(int groceryId) {
-        Grocery grocery = null;
+    //returns a listname (by presenting the ID)
+    public ListName getListNameWithId(int listnameId) {
+        ListName listname = null;
         try {
-            grocery = getHelper().getGroceryDao().queryForId(groceryId);
+            listname = getHelper().getListNameDao().queryForId(listnameId);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return grocery;
+        return listname;
     }
 
-    //add a grocery
-    public void addGrocery(Grocery grocery) {
+    //add a listname
+    public void addListName(ListName listname) {
         try {
-            getHelper().getGroceryDao().create(grocery);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //update a grocery
-    public void updateGrocery(Grocery grocery) {
-        try {
-            getHelper().getGroceryDao().update(grocery);
+            getHelper().getListNameDao().create(listname);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    //delete a grocery
-    public void deleteGrocery(Grocery grocery) {
+    //update a listname
+    public void updateListName(ListName listname) {
         try {
-            getHelper().getGroceryDao().delete(grocery);
+            getHelper().getListNameDao().update(listname);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    //delete all groceries
-    public void deleteAllGroceries() {
-        List<Grocery> groceries = null;
+    //delete a listname
+    public void deleteListName(ListName listname) {
         try {
-            groceries = getHelper().getGroceryDao().queryForAll();
-            getHelper().getGroceryDao().delete(groceries);
+            getHelper().getListNameDao().delete(listname);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    //delete all checked groceries
-    public void deleteCheckedGroceries() {
-        List<Grocery> groceries = null;
+    //delete all listnames
+    public void deleteAllListNames() {
+        List<ListName> listnames = null;
+        try {
+            listnames = getHelper().getListNameDao().queryForAll();
+            getHelper().getListNameDao().delete(listnames);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //delete all checked listnames
+    public void deleteCheckedListNames() {
+        List<ListName> listnames = null;
         try {
             //select those rows in the column with name 'checked' has a value of '1'
-            groceries = getHelper().getGroceryDao().queryForEq("checked", 1);
-            getHelper().getGroceryDao().delete(groceries);
+            listnames = getHelper().getListNameDao().queryForEq("checked", 1);
+            getHelper().getListNameDao().delete(listnames);
         } catch (SQLException e) {
             e.printStackTrace();
         }
