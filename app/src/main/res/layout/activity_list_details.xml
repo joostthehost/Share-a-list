@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/app_grey_light" >
+    android:layout_height="match_parent"
+    android:background="@color/app_white" >
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/listTitle"
+        android:text="Current list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/global_margin"
-        android:background="@color/app_white">
+        android:paddingTop="75dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="30dp"
+        android:gravity="right"
+        android:textSize="24dp"
+        android:textColor="@color/app_white"
+        android:background="@color/app_pink" />
 
-        <Button
-            android:id="@+id/grocery_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Add" />
+    <Button
+        android:id="@+id/grocery_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/listTitle"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Add" />
 
-        <AutoCompleteTextView
-            android:id="@+id/grocery_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/grocery_add"
-            android:layout_toLeftOf="@id/grocery_add"
-            android:ems="10"
-            android:inputType="text"
-            android:completionThreshold="1" >
+    <AutoCompleteTextView
+        android:id="@+id/grocery_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/grocery_add"
+        android:layout_toLeftOf="@id/grocery_add"
+        android:layout_below="@id/listTitle"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:inputType="text"
+        android:completionThreshold="1" >
 
-            <requestFocus />
+        <requestFocus />
 
-        </AutoCompleteTextView>
+    </AutoCompleteTextView>
 
-        <ListView
-            android:id="@+id/groceryListDetailedView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/grocery_edittext"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp" >
-        </ListView>
-
-    </RelativeLayout>
-
+    <ListView
+        android:id="@+id/groceryListDetailedView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grocery_edittext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" >
+    </ListView>
 
 </RelativeLayout>

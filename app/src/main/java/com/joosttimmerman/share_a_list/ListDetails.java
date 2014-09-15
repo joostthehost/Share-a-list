@@ -1,5 +1,6 @@
 package com.joosttimmerman.share_a_list;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -8,7 +9,7 @@ import android.view.MenuItem;
 /**
  * Created by Joost on 5-9-2014.
  */
-public class ListDetails extends ActionBarActivity {
+public class ListDetails extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

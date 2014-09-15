@@ -1,9 +1,13 @@
 package com.joosttimmerman.share_a_list;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
@@ -20,6 +24,9 @@ public class ListsOverview extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Remove title bar
+        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lists_overview);
 
@@ -57,6 +64,14 @@ public class ListsOverview extends Activity {
         titel.startAnimation(slide_down);
         list.startAnimation(fade_in);
         addButton.startAnimation(fade_in);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListsOverview.this, ListDetails.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

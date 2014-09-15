@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_white" >
+    android:background="@color/app_white">
 
     <TextView
         android:id="@+id/listTitle"
@@ -37,6 +37,6 @@
         android:padding="10dp"
         android:background="@drawable/circular_button_blue"
         android:src="@drawable/ic_action_add_list"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"/>
 
 </RelativeLayout>
